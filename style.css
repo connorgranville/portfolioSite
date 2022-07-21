@@ -1,0 +1,14 @@
+body {
+    background-color: #3678B3;
+    max-height: 100vh;
+}
+
+main {
+    --mobile_margin: 20px;
+    margin: var(--mobile_margin);
+    height: 100vh;
+    background: #5E9DD2;
+    border: 1px solid #FFF5D5;
+    box-shadow: inset 0px 4px 69px -22px rgba(49, 56, 102, 0.43);
+    border-radius: 30px;
+}

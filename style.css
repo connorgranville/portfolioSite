@@ -18,14 +18,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    margin: 0;
+    height: 90vh;
     max-height: 100vh;
     background-color: var(--dark-blue);
 }
 
 main {
-    --mobile_margin: 1.25rem;
-    margin: var(--mobile_margin);
+    /* --mobile_margin: 1.25rem;
+    margin: var(--mobile_margin); */
+    width: 90%;
     height: 85vh;
     background: var(--mid-blue);
     border: 1px solid var(--light-yellow);
@@ -37,7 +40,10 @@ main {
 }
 
 header {
-    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
     margin-bottom: 0;
     width: 80%;
 }
@@ -68,11 +74,21 @@ header img {
     width: 70%;
 }
 
+.buttons-and-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    color: var(--light-yellow)
+}
+
 .work-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.9rem;
+    gap: 3vh;
     width: 95%;
 }
 
@@ -99,6 +115,39 @@ header img {
     background-color: var(--dark-blue);
     border: var(--light-yellow);
     box-shadow: inset 0px 0px 20px rgba(56, 62, 104, 0.2);
+}
+
+.socials {
+    width: 80%;
+}
+
+.socials ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.socials ul li{
+    --logo-height: 3rem;
+    height: var(--logo-height);
+    width: var(--logo-height);
+}
+
+#behance {
+    height: calc(var(--logo-height) * 1.2);
+    width: calc(var(--logo-height) * 1.2);
+}
+
+svg {
+    fill: var(--light-yellow);
+}
+
+svg:hover {
+    fill: var(--light-blue);
 }
 
 footer {
@@ -144,4 +193,16 @@ footer {
 
 .about-me h2:hover {
     color: var(--mid-blue);
+}
+
+.desktop {
+    display: none;
+}
+
+@media only screen and (min-width: 490px) {
+    .desktop {
+        display: inline;
+    }
+
+
 }

@@ -74,6 +74,18 @@ header img {
     width: 70%;
 }
 
+content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cont-buttons-and-links {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
 .buttons-and-links {
     display: flex;
     flex-direction: column;
@@ -93,13 +105,13 @@ header img {
 }
 
 .work-buttons button {
-    width: 90%;
-    height: 5rem;
+    width: 100%;
+    height: clamp(1rem, 20vw, 20rem);
     background: var(--mid-blue);
     box-shadow: inset 0px 0px 20px rgba(56, 62, 104, 0.2);
     border: 5px solid var(--light-blue);
-    border-radius: 50px;
-    font-size: 2rem;
+    border-radius: 10vw;
+    font-size: 7.5vw;
     /* identical to box height */
     line-height: 40px;
     font-family: 'Jua', sans-serif;
@@ -117,11 +129,11 @@ header img {
     box-shadow: inset 0px 0px 20px rgba(56, 62, 104, 0.2);
 }
 
-.socials {
+.social-links {
     width: 80%;
 }
 
-.socials ul {
+.social-links ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -131,8 +143,8 @@ header img {
     list-style: none;
 }
 
-.socials ul li{
-    --logo-height: 3rem;
+.social-links ul li{
+    --logo-height: 5vw;
     height: var(--logo-height);
     width: var(--logo-height);
 }
@@ -155,7 +167,7 @@ footer {
     bottom: 0;
     left: 50%;
     width: 100%;
-    height: 4rem;
+    height: 6vh;
     transform: translate(-50%, 0%);
     display: flex;
     flex-direction: column;
@@ -163,6 +175,10 @@ footer {
     background-color: var(--purple);
     border-radius: 1.9rem 1.9rem 0 0;
     transition: height 250ms ease-out;
+}
+
+#footer-title {
+    margin: 1.5vh;
 }
 
 .expand {
@@ -184,25 +200,83 @@ footer {
     color: var(--dark-blue);
 }
 
-.about-me p {
+#about-me-p {
     color: var(--light-yellow);
     font-family: 'Jua', monospace;
     font-size: 1.5rem;
     width: 75%;
 }
 
-.about-me h2:hover {
-    color: var(--mid-blue);
-}
-
 .desktop {
     display: none;
 }
 
-@media only screen and (min-width: 490px) {
+/* phone and device screens */
+@media only screen and (max-width: 550px) {
+    .social-links ul li {
+        --logo-height: 10vw;
+    }
+    
+    .about-me h2:hover {
+        color: var(--mid-blue);
+    }
+}
+
+/* ~1080p screens */
+@media only screen and (min-width: 550px) {
+    body {
+        height: 100vh;
+    }
+
+    main {
+        height: 95vh;
+    }
+
     .desktop {
         display: inline;
     }
 
+    content {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        width: 90%;
+    }
 
+    #about-me-p {
+        width: 100%;
+    }
+
+    .cont-buttons-and-links {
+        height: 90%;
+    }
+
+    .work-buttons button {
+        height: clamp(4rem, 5vw, 5rem);
+        font-size: clamp(1rem, 3vw, 2rem);
+    }
+
+    .social-links ul li{
+        --logo-height: 2.5rem;
+    }
+
+    #footer-title {
+        margin: 2vh;
+    }
+
+    #about-me-p {
+        display: hidden;
+    }
+    
+}
+
+/* ~4k screens */
+@media only screen and (min-width: 1921px) {
+    .work-buttons button {
+        height: clamp(1rem, 9vw, 12rem);
+    }
+}
+
+#width {
+    position: absolute;
+    bottom: 3rem;
 }
